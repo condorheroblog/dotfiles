@@ -143,15 +143,15 @@ function gdc() {
 # └───────────────────────┘
 # 
 # I put
-# `~/p` for my GitHub projects
+# `~/i` for my GitHub projects
 # `~/f` for forks
 # `~/c` for my company projects
 
-function p() {
-  cd ~/p/$1
+function i() {
+  cd ~/i/$1
 }
 
-function c() {
+function company() {
   cd ~/c/$1
 }
 
@@ -179,21 +179,29 @@ function clone() {
   fi
 }
 
-# Clone to ~/p and cd to it
-function clonep() {
-  p && clone "$@" && code . && cd ~2
+# Clone to ~/i and cd to it
+function clonei() {
+  i && clone "$@" && code . && cd ~2
 }
 
 function clonec() {
-  c && clone "$@" && code . && cd ~2
+  company && clone "$@" && code . && cd ~2
 }
 
 function clonef() {
   forks && clone "$@" && code . && cd ~2
 }
 
-function codep() {
-  p && code "$@" && cd -
+function codei() {
+  forks && code "$@" && cd -
+}
+
+function codec() {
+  company && code "$@" && cd -
+}
+
+function codef() {
+  f && code "$@" && cd -
 }
 
 # 🚎 brew install live-server
