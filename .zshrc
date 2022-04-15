@@ -193,7 +193,7 @@ function clonef() {
 }
 
 function codei() {
-  forks && code "$@" && cd -
+  i && code "$@" && cd -
 }
 
 function codec() {
@@ -201,7 +201,7 @@ function codec() {
 }
 
 function codef() {
-  f && code "$@" && cd -
+  forks && code "$@" && cd -
 }
 
 # 🚎 brew install live-server
